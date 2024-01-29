@@ -4,6 +4,7 @@ import Home from './components/Home'
 import Navbar from './components/Navbar'
 import Login from './components/Login'
 import About from './components/About'
+import Singup from './components/Singup'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
      <Route path = '/' element={<Home />}> </Route>
      <Route path = '/about' element={<About />}> </Route>  
      <Route path = '/login' element={<Login />}> </Route>
+     <Route path = '/signup' element={<Singup />}> </Route>
    </Routes>
   </BrowserRouter>
   )
