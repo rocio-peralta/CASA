@@ -21,15 +21,14 @@ mongoose
     console.error('Database connection error:', error)
   })
 
-
-app.post("/users", async(req, res) => {
-  const newUser = new User ({
+app.post('/users', async (req, res) => {
+  const newUser = new User({
     name: req.body.name,
     email: req.body.email,
     password: req.body.password,
   })
-  const newRegister = await newUser.save();
-  res.json(newRegister);
-  })
+  const newRegister = await newUser.save()
+  res.json(newRegister)
+})
 
 export default app
