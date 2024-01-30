@@ -1,16 +1,15 @@
-import mongoose  from "mongoose";
+import mongoose from 'mongoose'
 
-const Schema = mongoose.Schema;
-const ObjectId = mongoose.Types.ObjectId;
+const Schema = mongoose.Schema
+const ObjectId = mongoose.Types.ObjectId
 
 const userShcema = new Schema({
   id: ObjectId,
   name: String,
   email: String,
   password: String,
-});
+})
 
-const userModel = mongoose.model("users", userShcema);
+const userModel = mongoose.model('signup', userShcema)
 
-export default userModel;
-  
+export default userModel

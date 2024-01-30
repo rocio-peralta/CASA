@@ -1,5 +1,5 @@
-import { useState } from "react"
-import { Link } from "react-router-dom"
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 const Singup = () => {
@@ -7,11 +7,15 @@ const Singup = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const handleSubmit= (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post('http://localhost:3001/signup',{name, email, password})
-    .then(result => console.log(result))
-    .catch(err => console.log(err))
+    axios
+      .post('http://localhost:3000/signup', { name, email, password })
+      .then((result) => console.log(result))
+      .catch((err) => console.log(err))
+    setUsername('')
+    setEmail('')
+    setPassword('')
   }
   return (
     <div>
@@ -24,7 +28,8 @@ const Singup = () => {
             </label>
             <input
               type="text"
-              placeholder="Enter name"
+              placeholder= "Enter Name"
+              value = {name}
               autoComplete="off"
               name="name"
               onChange={(e) => setUsername(e.target.value)}
@@ -34,9 +39,10 @@ const Singup = () => {
             <label htmlFor="email">
               <strong>Email:</strong>
             </label>
-            <input 
+            <input
               type="text"
-              placeholder="Enter email"
+              placeholder="Enter Email"
+              value={email}
               autoComplete="off"
               name="email"
               onChange={(e) => setEmail(e.target.value)}
@@ -47,15 +53,14 @@ const Singup = () => {
             <input
               type="password"
               placeholder="Enter Password"
+              value={password}
               name="password"
               onChange={(e) => setPassword(e.target.value)}
             ></input>
           </div>
-          <button type= "submit">
-            Register
-          </button>
+          <button type="submit">Register</button>
           <p>Already have an account</p>
-          <Link to= '/login'>Login</Link>
+          <Link to="/login">Login</Link>
         </form>
       </div>
     </div>

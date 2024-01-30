@@ -2,7 +2,6 @@ import express from 'express'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 import cors from 'cors'
-import { MongoClient, ServerApiVersion } from 'mongodb'
 import User from './models/newUser.js'
 
 const app = express()
@@ -21,7 +20,7 @@ mongoose
     console.error('Database connection error:', error)
   })
 
-app.post('/users', async (req, res) => {
+app.post('/signup', async (req, res) => {
   const newUser = new User({
     name: req.body.name,
     email: req.body.email,
