@@ -49,9 +49,7 @@ const ForgotPassword = () => {
             <button type="submit" onClick={handleSubmit}>
               Send
             </button>
-            <p style={{ color: 'red' }}>
-              {validation}
-            </p>
+            <p style={{ color: 'red' }}>{validation}</p>
           </form>
         </div>
       </div>

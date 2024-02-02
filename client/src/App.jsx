@@ -5,7 +5,8 @@ import Navbar from './components/Navbar'
 import Login from './components/Login'
 import About from './components/About'
 import Singup from './components/Singup'
-import ForgotPassword from './components/ForgotPassword'
+import ForgotPassword from './components/Forgotpassword'
+import ResetPassword from './components/ResetPassword'
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
           {' '}
         </Route>
         <Route path="/forgotPassword" element={<ForgotPassword />}>
+          {' '}
+        </Route>
+        <Route path="/resetPassword/:token" element={<ResetPassword />}>
           {' '}
         </Route>
       </Routes>

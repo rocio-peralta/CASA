@@ -82,4 +82,21 @@ router.post('/forgot-password', async (req, res) => {
   }
 })
 
+router.post('/reset-password/:token', async (req, res) => {
+  const { token } = req.params // Access the token property from req.params
+  const { password } = req.body
+  try {
+    const decoded = jwt.verify(token, process.env.SECRET_KEY)
+    const id = decoded.id
+    const haspassword = await bcryt.hash(password, 10)
+    await User.findByIdAndUpdate({ _id: id }, { password: haspassword })
+    return res
+      .status(200)
+      .json({ status: true, message: 'Password reset successfully' })
+  } catch (error) {
+    console.log('Error from server ' + error.message)
+    return res.status(400).json({ status: false, message: 'Invalid token' })
+  }
+})
+
 export { router as UserRouter }
