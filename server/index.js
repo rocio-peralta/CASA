@@ -2,11 +2,13 @@ import express from 'express'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 import cors from 'cors'
+import cookieParser from 'cookie-parser'
 import { UserRouter } from './routes/user.js'
 
 const app = express()
 app.use(express.json()) //to handle json data
-app.use(cors({ origin: 'http://localhost:5173', optionsSuccessStatus: 204 }))
+app.use(cors({ origin: 'http://localhost:5173', credentials:true, optionsSuccessStatus: 204 }))
+app.use(cookieParser())
 app.use('/auth', UserRouter)
 dotenv.config()
 

@@ -1,9 +1,28 @@
 import { useState } from 'react'
-const Login = () => {
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
+import axios from 'axios'
+import { Link, useNavigate } from 'react-router-dom'
 
-  const handleSubmit = () => {}
+const Login = () => {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  
+  const navigate = useNavigate()
+
+  axios.defaults.withCredentials = true
+  const handleSubmit = (e) => { 
+    e.preventDefault()
+    axios
+      .post('http://localhost:4000/auth/login', {email, password })
+      .then((result) => {
+        if (result.data.status) {
+          console.log(result)
+          navigate('/Home')
+        }
+      })
+      .catch((err) => console.log(err))
+    setEmail('')
+    setPassword('')
+  }
   return (
     <>
       <div>
@@ -11,12 +30,12 @@ const Login = () => {
         <div>
           <form>
             <div>
-              <label htmlFor="username"> Username:</label>
+              <label htmlFor="email"> Email:</label>
               <input
                 type="text"
-                placeholder="Enter Username"
-                value= {username}
-                onChange={(e) => setUsername(e.target.value)}
+                placeholder="Enter Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               ></input>
             </div>
             <div>
@@ -24,10 +43,12 @@ const Login = () => {
               <input
                 type="password"
                 placeholder="********"
+                value={password}
                 onChange={(e) => setPassword(e.target.value)}
               ></input>
             </div>
             <button onClick={handleSubmit}>Login</button>
+            <p>Don`t have an account? <Link to="/signup">Signup</Link></p>
           </form>
         </div>
       </div>
