@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [validation, setValidation] = useState('')
 
   const navigate = useNavigate()
 
@@ -19,9 +20,13 @@ const Login = () => {
           navigate('/')
         }
       })
-      .catch((err) => console.log(err))
-    setEmail('')
-    setPassword('')
+      .catch((err) => {
+        console.log(err.response.data.message)
+        const message = err.response.data.message
+        setValidation(message)
+        setEmail('')
+        setPassword('')
+      })
   }
   return (
     <>
@@ -47,7 +52,9 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
               ></input>
             </div>
+            <p style={{ color: 'red' }}>{validation}</p>
             <button onClick={handleSubmit}>Login</button>
+            <br></br>
             <Link to="/forgotPassword">Forgot password?</Link>
             <p>
               Don`t have an account? <Link to="/signup">Signup</Link>
