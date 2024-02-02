@@ -2,32 +2,23 @@ import express from 'express'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 import cors from 'cors'
-import User from './models/newUser.js'
+import { UserRouter } from './routes/user.js'
 
 const app = express()
 app.use(express.json()) //to handle json data
-app.use(cors())
+app.use(cors({ origin: 'http://localhost:5173', optionsSuccessStatus: 204 }))
+app.use('/auth', UserRouter)
 dotenv.config()
 
 mongoose
   .connect(process.env.URL)
   .then(() => {
     console.log('Database connected successfully')
-    app.listen(process.env.PORT || 5000)
+    app.listen(process.env.PORT)
     console.log(`Listening on port ${process.env.PORT}`)
   })
   .catch((error) => {
     console.error('Database connection error:', error)
   })
-
-app.post('/signup', async (req, res) => {
-  const newUser = new User({
-    name: req.body.name,
-    email: req.body.email,
-    password: req.body.password,
-  })
-  const newRegister = await newUser.save()
-  res.json(newRegister)
-})
 
 export default app

@@ -1,11 +1,9 @@
-import { useState } from "react"
+import { useState } from 'react'
 const Login = () => {
-
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  
-  const handleSubmit = () => {
-  }
+
+  const handleSubmit = () => {}
   return (
     <>
       <div>
@@ -13,12 +11,21 @@ const Login = () => {
         <div>
           <form>
             <div>
-            <label htmlFor = "username"> Username:</label>
-            <input type = "text" placeholder="Enter Username" onChange={(e)=> setUsername(e.target.value)}></input>
+              <label htmlFor="username"> Username:</label>
+              <input
+                type="text"
+                placeholder="Enter Username"
+                value= {username}
+                onChange={(e) => setUsername(e.target.value)}
+              ></input>
             </div>
             <div>
-            <label htmlFor = "pasword"> Password:</label>
-            <input type = "password" placeholder="Enter Password" onChange={(e)=> setPassword(e.target.value)}></input>
+              <label htmlFor="pasword"> Password:</label>
+              <input
+                type="password"
+                placeholder="********"
+                onChange={(e) => setPassword(e.target.value)}
+              ></input>
             </div>
             <button onClick={handleSubmit}>Login</button>
           </form>
@@ -26,6 +33,6 @@ const Login = () => {
       </div>
     </>
   )
-} 
+}
 
-export default Login;
+export default Login

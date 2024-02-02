@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 const Singup = () => {
-  const [name, setUsername] = useState('')
+  const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
   const handleSubmit = (e) => {
     e.preventDefault()
     axios
-      .post('http://localhost:3000/signup', { name, email, password })
+      .post('http://localhost:4000/auth/signup', { username, email, password })
       .then((result) => console.log(result))
       .catch((err) => console.log(err))
     setUsername('')
@@ -28,8 +28,8 @@ const Singup = () => {
             </label>
             <input
               type="text"
-              placeholder= "Enter Name"
-              value = {name}
+              placeholder="Enter Name"
+              value={username}
               autoComplete="off"
               name="name"
               onChange={(e) => setUsername(e.target.value)}
@@ -52,7 +52,7 @@ const Singup = () => {
             <label htmlFor="pasword"> Password:</label>
             <input
               type="password"
-              placeholder="Enter Password"
+              placeholder="*********"
               value={password}
               name="password"
               onChange={(e) => setPassword(e.target.value)}
