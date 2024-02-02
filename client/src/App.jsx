@@ -7,6 +7,7 @@ import About from './components/About'
 import Singup from './components/Singup'
 import ForgotPassword from './components/Forgotpassword'
 import ResetPassword from './components/ResetPassword'
+import Dashboard from './components/Dashboard'
 
 function App() {
   return (
@@ -31,7 +32,11 @@ function App() {
         <Route path="/resetPassword/:token" element={<ResetPassword />}>
           {' '}
         </Route>
+        <Route path="/dashboard" element={<Dashboard />}>
+          {' '}
+        </Route>
       </Routes>
+      
     </BrowserRouter>
   )
 }

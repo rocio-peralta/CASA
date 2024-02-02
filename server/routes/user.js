@@ -99,4 +99,27 @@ router.post('/reset-password/:token', async (req, res) => {
   }
 })
 
+const verifyUser = async (req, res, next) => {
+  const token = req.cookies.token
+  if (!token) {
+    return res.status(401).json({ status: false, message: 'Access denied' })
+  }
+  try {
+    const verified = await jwt.verify(token, process.env.SECRET_KEY)
+    req.user = verified
+    next()
+  } catch (error) {
+    return res.status(400).json({ status: false, message: 'Invalid token' })
+  }
+}
+router.get('/verify', verifyUser, (res, req) => {
+  // const name = User.findOne({ username: req.user.username})
+  return res.json({ status: true, message: 'User verified' })
+})
+
+router.get('/logout', (req, res) => {
+  res.clearCookie('token')
+  return res.json({ status: true, message: 'User logged out' })
+})
+
 export { router as UserRouter }
