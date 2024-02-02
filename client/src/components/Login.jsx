@@ -5,18 +5,18 @@ import { Link, useNavigate } from 'react-router-dom'
 const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  
+
   const navigate = useNavigate()
 
   axios.defaults.withCredentials = true
-  const handleSubmit = (e) => { 
+  const handleSubmit = (e) => {
     e.preventDefault()
     axios
-      .post('http://localhost:4000/auth/login', {email, password })
+      .post('http://localhost:4000/auth/login', { email, password })
       .then((result) => {
         if (result.data.status) {
           console.log(result)
-          navigate('/Home')
+          navigate('/')
         }
       })
       .catch((err) => console.log(err))
@@ -48,7 +48,10 @@ const Login = () => {
               ></input>
             </div>
             <button onClick={handleSubmit}>Login</button>
-            <p>Don`t have an account? <Link to="/signup">Signup</Link></p>
+            <Link to="/forgotPassword">Forgot password?</Link>
+            <p>
+              Don`t have an account? <Link to="/signup">Signup</Link>
+            </p>
           </form>
         </div>
       </div>
