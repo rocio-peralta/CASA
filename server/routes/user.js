@@ -99,22 +99,33 @@ router.post('/reset-password/:token', async (req, res) => {
   }
 })
 
-const verifyUser = async (req, res, next) => {
-  const token = req.cookies.token
-  if (!token) {
-    return res.status(401).json({ status: false, message: 'Access denied' })
-  }
+const verifyUser = (req, res, next) => {
   try {
-    const verified = await jwt.verify(token, process.env.SECRET_KEY)
-    req.user = verified
+    const token = req.cookies.token
+    if (!token) {
+      return res.json({ status: false, message: 'Access denied' })
+    }
+    const verified = jwt.verify(token, process.env.SECRET_KEY)
+    req.userName = verified.username
+    // console.log('Verified user: ' + req.userName);
     next()
   } catch (error) {
     return res.status(400).json({ status: false, message: 'Invalid token' })
   }
 }
-router.get('/verify', verifyUser, (res, req) => {
-  // const name = User.findOne({ username: req.user.username})
-  return res.json({ status: true, message: 'User verified' })
+router.get('/verify', verifyUser, async (req, res) => {
+  try {
+    const user = req.userName
+    
+
+    return res.json({
+      status: true,
+      message: 'User verified',
+      name: user
+    })
+  } catch (error) {
+    return res.status(500).json({ status: false, message: 'An error occurred' })
+  }
 })
 
 router.get('/logout', (req, res) => {

@@ -1,18 +1,19 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
 import Home from './components/Home'
-import Navbar from './components/Navbar'
+// import Navbar from './components/Navbar'
 import Login from './components/Login'
 import About from './components/About'
 import Singup from './components/Singup'
 import ForgotPassword from './components/Forgotpassword'
 import ResetPassword from './components/ResetPassword'
 import Dashboard from './components/Dashboard'
+import Logout from './components/Logout'
 
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
+  
       <Routes>
         <Route path="/" element={<Home />}>
           {' '}
@@ -33,6 +34,9 @@ function App() {
           {' '}
         </Route>
         <Route path="/dashboard" element={<Dashboard />}>
+          {' '}
+        </Route>
+        <Route path="/logout" element={<Logout />}>
           {' '}
         </Route>
       </Routes>
