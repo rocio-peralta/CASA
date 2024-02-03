@@ -30,8 +30,8 @@ mongoose
     console.error('Database connection error:', error)
   })
 
-app.get('/', (req, res) => {
-  res.json('Hello')
-})
+// app.get('/', (req, res) => {
+//   res.json('Hello')
+// })
 
 export default app
