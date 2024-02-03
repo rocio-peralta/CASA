@@ -9,7 +9,7 @@ const app = express()
 app.use(express.json()) //to handle json data
 app.use(
   cors({
-    origin: 'http://localhost:5173',
+    origin: '',
     credentials: true,
     optionsSuccessStatus: 204,
     methods: 'GET, POST',
@@ -30,8 +30,5 @@ mongoose
     console.error('Database connection error:', error)
   })
 
-// app.get('/', (req, res) => {
-//   res.json('Hello')
-// })
 
 export default app
