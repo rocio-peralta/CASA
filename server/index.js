@@ -9,7 +9,7 @@ const app = express()
 app.use(express.json()) //to handle json data
 app.use(
   cors({
-    origin: 'https://casa-frontend-tau.vercel.app/',
+    origin: 'https://casa-frontend-tau.vercel.app',
     credentials: true,
     optionsSuccessStatus: 204,
     methods: 'GET, POST',
