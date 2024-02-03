@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { API_URL } from '../api'
 
 const Singup = () => {
   const [username, setUsername] = useState('')
@@ -13,7 +14,7 @@ const Singup = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     axios
-      .post('http://localhost:4000/auth/signup', { username, email, password })
+      .post(`${API_URL}/signup`, { username, email, password })
       .then((result) => {
         if (result.data.status) {
           console.log(result)

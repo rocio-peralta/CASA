@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
+import { API_URL } from '../api'
 
 const Login = () => {
   const [email, setEmail] = useState('')
@@ -13,7 +14,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     axios
-      .post('http://localhost:4000/auth/login', { email, password })
+      .post(`${API_URL}/login`, { email, password })
       .then((result) => {
         if (result.data.status) {
           console.log(result)

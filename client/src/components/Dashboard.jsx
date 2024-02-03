@@ -4,6 +4,7 @@ import axios from 'axios'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import Logout from './Logout'
+import { API_URL } from '../api'
 
 const Dashboard = () => {
   const navigate = useNavigate()
@@ -13,7 +14,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:4000/auth/verify')
+      .get(`${API_URL}/verify`)
       .then((res) => {
         if (res.data.status) {
           setName(res.data.name)

@@ -7,7 +7,7 @@ import { UserRouter } from './routes/user.js'
 
 const app = express()
 app.use(express.json()) //to handle json data
-app.use(cors({ origin: 'http://localhost:5173', credentials:true, optionsSuccessStatus: 204 }))
+app.use(cors({ origin: 'http://localhost:5173', credentials:true, optionsSuccessStatus: 204, methods: 'GET, POST'}))
 app.use(cookieParser())
 app.use('/auth', UserRouter)
 dotenv.config()

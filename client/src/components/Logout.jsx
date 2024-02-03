@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import { API_URL } from '../api'
 
 const Logout = ()=>{
   const navigate = useNavigate()
@@ -8,7 +9,7 @@ const Logout = ()=>{
 
   const handleLogout = () => {
     axios
-      .get('http://localhost:4000/auth/logout', {})
+      .get(`${API_URL}/logout`, {})
       .then((res) => {
         if (res.data.status) {
           navigate('/login')

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import Logout from './Logout'
+import Singup from './Singup'
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       </p>
 
       <Logout />
+      <Singup />
       <button>
         <Link to="/dashboard">Design tool</Link>
       </button>
