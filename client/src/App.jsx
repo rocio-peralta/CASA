@@ -5,7 +5,7 @@ import Home from './components/Home'
 import Login from './components/Login'
 import About from './components/About'
 import Singup from './components/Singup'
-import ForgotPassword from './components/Forgotpassword'
+// import ForgotPassword from './components/Forgotpassword'
 import ResetPassword from './components/ResetPassword'
 import Dashboard from './components/Dashboard'
 import Logout from './components/Logout'
@@ -13,7 +13,6 @@ import Logout from './components/Logout'
 function App() {
   return (
     <BrowserRouter>
-  
       <Routes>
         <Route path="/" element={<Home />}>
           {' '}
@@ -27,9 +26,9 @@ function App() {
         <Route path="/signup" element={<Singup />}>
           {' '}
         </Route>
-        <Route path="/forgotPassword" element={<ForgotPassword />}>
+        {/* <Route path="/forgotPassword" element={<ForgotPassword />}>
           {' '}
-        </Route>
+        </Route> */}
         <Route path="/resetPassword/:token" element={<ResetPassword />}>
           {' '}
         </Route>
@@ -40,7 +39,6 @@ function App() {
           {' '}
         </Route>
       </Routes>
-      
     </BrowserRouter>
   )
 }
