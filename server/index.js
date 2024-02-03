@@ -7,7 +7,17 @@ import { UserRouter } from './routes/user.js'
 
 const app = express()
 app.use(express.json()) //to handle json data
+app.use((req, res, next) => {
+  res.setHeader(
+    'Access-Control-Allow-Origin',
+    'https://casa-frontend-tau.vercel.app'
+  )
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+  res.header('Access-Control-Allow-Credentials', true)
+  next()
+})
 app.use(
+  '*',
   cors({
     origin: 'https://casa-frontend-tau.vercel.app',
     credentials: true,
@@ -29,6 +39,5 @@ mongoose
   .catch((error) => {
     console.error('Database connection error:', error)
   })
-
 
 export default app
