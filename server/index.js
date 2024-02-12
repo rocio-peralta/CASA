@@ -6,7 +6,6 @@ import cookieParser from 'cookie-parser'
 import { UserRouter } from './routes/user.js'
 
 const app = express()
-app.use(express.json()) //to handle json data
 app.use(
   '*',
   cors({
@@ -16,7 +15,8 @@ app.use(
     optionsSuccessStatus: 204,
     methods: 'GET, POST',
   })
-)
+  )
+app.use(express.json()) //to handle json data
 app.use(cookieParser())
 app.use('/auth', UserRouter)
 dotenv.config()
