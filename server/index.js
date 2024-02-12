@@ -11,7 +11,7 @@ app.use(
   '*',
   cors({
     allowedHeaders: 'Content-Type, Authorization',
-    origin: 'https://casa-roan.vercel.app',
+    origin: 'https://casa-roan.vercel.app/auth',
     credentials: true,
     optionsSuccessStatus: 204,
     methods: 'GET, POST',
