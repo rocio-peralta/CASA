@@ -19,6 +19,8 @@ app.use(express.json()) //to handle json data
 app.use(
   '*',
   cors({
+    AccessControlAllowHeaders: 'Content-Type, Authorization',
+
     origin: 'https://casa-roan.vercel.app',
     credentials: true,
     optionsSuccessStatus: 204,
