@@ -1,1 +1,1 @@
-export const API_URL = 'https://casa-roan.vercel.app/auth'
+export const API_URL = 'https://casa-roan.vercel.app/'
