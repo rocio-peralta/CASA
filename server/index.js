@@ -14,7 +14,7 @@ app.use(
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE, OPTIONS',
   })
 )
-// app.use(cors({ origin: 'http://localhost:5173', credentials:true, optionsSuccessStatus: 204 }))
+app.use(cors({ origin: 'http://localhost:5173', credentials:true, optionsSuccessStatus: 204 }))
 
 app.use(cookieParser())
 app.use('/auth', UserRouter)
