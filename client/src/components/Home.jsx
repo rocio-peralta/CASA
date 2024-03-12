@@ -5,7 +5,7 @@ import Singup from './Singup'
 const Home = () => {
   return (
     <>
-      <div>Home</div>
+      <div className='text-3xl bg-slate-700'>Home</div>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque debitis
         quos fugit iure ab omnis quibusdam dolore perspiciatis quis, in sunt
