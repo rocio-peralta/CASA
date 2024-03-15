@@ -6,13 +6,13 @@ const Navbar = () => {
     <>
     <nav className="nav">
     <div>
-      <Link to = '/'>Navbar</Link>
+      <Link to = '/' className="font-logo text-secondaryColor text-xl">SANCTUARY</Link>
     </div>
-    <div>
+    {/* <div>
        <Link to = '/about'>About</Link><br></br>
        <Link to = '/login'>Login</Link>
        <Link to = '/signup'>Signup</Link>
-    </div>
+    </div> */}
     </nav>
     </>
   )
