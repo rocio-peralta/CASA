@@ -8,7 +8,9 @@ export default {
         secondaryColor: '#C8C2AF',
       },
       fontFamily: {
-          test: ["Whisper", "cursive"]
+          typographicPrimary: ["Alumni Sans", "sans-serif"],
+          typographicSecondary: ["Montserrat", "sans-serif"],
+          typographicTertiary: ["Playfair Display", "serif"],
           }
     },
   },

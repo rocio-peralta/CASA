@@ -14,10 +14,10 @@ const Home = () => {
         Dolores!
       </p> */}
       <Navbar />
-      <h1 className="font-primaryTypography text text-3xl text-secondaryColor">
+      <h1 className="font-typographicSecondary text text-3xl text-secondaryColor">
         DESIGN
       </h1>
-      <h1 className="font- text text-3xl text-secondaryColor font-test font-thin">
+      <h1 className="font- text text-3xl text-secondaryColor font-typographicTertiary font-thin">
         BAY OF PLENTY
       </h1>
 
