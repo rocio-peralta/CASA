@@ -1,34 +1,28 @@
-import { Link } from 'react-router-dom'
-import Navbar from './Navbar'
-// import Logout from './Logout'
-// import Singup from './Singup'
+import { Link } from 'react-router-dom';
+import Navbar from './Navbar';
 
 const Home = () => {
   return (
     <>
-      {/* <div className="text-3xl bg-slate-700">Home</div> */}
-      {/* <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque debitis
-        quos fugit iure ab omnis quibusdam dolore perspiciatis quis, in sunt
-        accusantium inventore culpa, sit voluptate, veritatis ipsa eligendi?
-        Dolores!
-      </p> */}
       <Navbar />
-      <h1 className="font-typographicSecondary text text-3xl text-secondaryColor">
-        DESIGN
-      </h1>
-      <h1 className="font- text text-3xl text-secondaryColor font-typographicTertiary font-thin">
-        BAY OF PLENTY
-      </h1>
-
-      {/* <Logout />
-      <Singup /> */}
-      <button>
-        <Link to="/dashboard">Design tool</Link>
-      </button>
-      <br></br>
+      <section className="grid grid-cols-4 font-typographicSecondary text-5xl font-medium text-secondaryColor">
+        <div className="col-span-3 pt-10 overflow-hidden">
+          <h1 className="p-5 animate-reveal">DESIGNED</h1>
+        </div>
+        <div className="pt-10 overflow-hidden">
+          <h1 className="grid justify-items-end p-5 pl-5 pr-5 animate-reveal ">AND</h1>
+        </div>
+        <div className="col-start-2 col-end-5 overflow-hidden">
+          <h1 className="grid justify-items-end pl-5 pr-5 animate-reveal">CRAFTED IN THE</h1>
+        </div>
+        <div className="col-start-3 col-end-5 pt-4 overflow-hidden">
+          <h1 className="grid justify-items-end text-3xl text-secondaryColor font-typographicTertiary font-thin line-through pr-5 animate-reveal">
+            BAY OF PLENTY
+          </h1>
+        </div>
+      </section>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
