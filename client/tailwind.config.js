@@ -17,15 +17,10 @@ export default {
             transform: 'translateY(75%)',
             opacity: 0,
           },
-          '100%': {
-            transform: 'translateY(0)',
-            opacity: 1,
-          },
-       
         },
       },
       animation: {
-        reveal: 'reveal 2s linear forwards',
+        reveal: 'reveal 1.5s linear forwards',
       },
     },
   },
