@@ -4,6 +4,7 @@ const Home = () => {
   return (
     <>
       <Navbar />
+      {/* <div>borrar esto </div> */}
       <section className="grid grid-cols-4 font-typographicSecondary text-8xl md:text-red-500 sm:text-orange-300 lg:text-lime-300 xl:text-teal-400 font-medium text-secondaryColor">
         <div className="col-span-3 pt-10 overflow-hidden">
           <h1 className="p-5 animate-reveal">DESIGNED</h1>
