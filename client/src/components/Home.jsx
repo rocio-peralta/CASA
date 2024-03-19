@@ -4,8 +4,7 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      {/* <div>borrar esto </div> */}
-      <section className="grid grid-cols-4 font-typographicSecondary text-8xl md:text-red-500 sm:text-orange-300 lg:text-lime-300 xl:text-teal-400 font-medium text-secondaryColor">
+      <section className="grid grid-cols-4 font-typographicSecondary text-3xl sm:text-6xl font-medium text-secondaryColor">
         <div className="col-span-3 pt-10 overflow-hidden">
           <h1 className="p-5 animate-reveal">DESIGNED</h1>
         </div>
@@ -20,7 +19,7 @@ const Home = () => {
           </h1>
         </div>
         <div className="col-start-3 col-end-5 pt-4 overflow-hidden">
-          <h1 className="grid justify-items-end  text-secondaryColor font-typographicTertiary font-thin line-through pr-5 animate-reveal">
+          <h1 className="grid justify-items-end  text-secondaryColor font-typographicTertiary text-xl sm:text-3xl font-thin line-through pr-5 animate-reveal">
             BAY OF PLENTY
           </h1>
         </div>
