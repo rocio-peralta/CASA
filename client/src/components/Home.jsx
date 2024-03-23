@@ -1,18 +1,9 @@
 import Navbar from './Navbar'
 import Transition from './Transition'
-import { motion, useScroll, useTransform } from 'framer-motion'
-import { useRef } from 'react'
+
 
 const Home = () => {
-  const targetRef = useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-    offset: ['start end', 'end end'],
-  })
-  //This is a variable or value representing the progress of scrolling on the Y-axis.
- // the first array is the range of the scrollYProgress, the second array is the range of the opacity. 
- // firs array indi
-  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 0.5, 1])
+
   return (
     <>
       <Navbar />
@@ -36,31 +27,8 @@ const Home = () => {
             BAY OF PLENTY
           </h1>
         </div>
-
-        <motion.img
-          style={{ opacity }}
-          ref={targetRef}
-          className="justify-end pt-20"
-          src="/images/wood.jpeg"
-          alt="Wood"
-        ></motion.img>
-        <br />   <br />    <br />
-          <motion.img
-          style={{ opacity }}
-          ref={targetRef}
-          className="justify-end pt-20"
-          src="/images/wood.jpeg"
-          alt="Wood"
-        ></motion.img>
-          <br />   <br />    <br />
-          <motion.img
-          style={{ opacity }}
-          ref={targetRef}
-          className="justify-end pt-20"
-          src="/images/wood.jpeg"
-          alt="Wood"
-        ></motion.img>
       </section>
+      <Transition />
     </>
   )
 }
