@@ -1,14 +1,26 @@
 import Navbar from './Navbar'
 import Transition from './Transition'
-
+import { motion, useScroll, useTransform } from 'framer-motion'
+import { useRef } from 'react'
 
 const Home = () => {
+  const targetRef = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    // the start of the target meet the end of the container
+    offset: ['start end', 'end end'],
+  })
+  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 0.5, 1])
 
   return (
     <>
       <Navbar />
 
-      <section className="relative grid grid-cols-1 sm:grid-cols-4 font-typographicSecondary text-4xl sm:text-6xl font-medium text-secondaryColor">
+      <motion.section
+        style={{ opacity }}
+        ref={targetRef}
+        className="relative grid grid-cols-1 sm:grid-cols-4 font-typographicSecondary text-4xl sm:text-6xl font-medium text-secondaryColor"
+      >
         <div className=" col-span-1 sm:col-span-3 sm:pt-10 overflow-hidden">
           <h1 className="pl-5 sm:p-5 animate-reveal">DESIGNED</h1>
         </div>
@@ -27,7 +39,7 @@ const Home = () => {
             BAY OF PLENTY
           </h1>
         </div>
-      </section>
+      </motion.section>
       <Transition />
     </>
   )

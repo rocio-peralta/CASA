@@ -13,7 +13,8 @@ const Navbar = () => {
               SANCTUARY
             </Link>
           </div>
-          <div className="grid justify-items-end content-center p-5">
+          <div className="fixed flex justify-self-end content-center p-5">
+         
             <svg
               width="10px"
               height="10px"

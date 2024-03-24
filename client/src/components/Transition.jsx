@@ -18,7 +18,7 @@ const Transition = () => {
     ['0%', '-55%', '"-60%', '-80%']
   )
   return (
-    <div className="col-span-1 sm:col-start-4 sm:col-end-5 ">
+    <div className="flex ">
       {/* <motion.img
           style={{ opacity, x }}
           ref={targetRef}
@@ -26,11 +26,25 @@ const Transition = () => {
           src="/images/wood.jpeg"
           alt="Wood"
         ></motion.img> */}
+        <div className='grid grid-cols-3'>
+
       <img
         src="/images/wood.jpeg"
         alt="Wood"
+        className="col-start-2 justify-end pt-20"
+      ></img>
+       <img
+        src="/images/concrete.jpeg"
+        alt="Wood"
         className="justify-end pt-20"
       ></img>
+       <img
+        src="/images/outside.jpg"
+        alt="Wood"
+        className="col-start-2 justify-end pt-20"
+      ></img>
+
+        </div>
     </div>
   )
 }
