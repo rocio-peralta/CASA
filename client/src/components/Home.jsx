@@ -1,3 +1,4 @@
+import Borrador from './Borrador'
 import Navbar from './Navbar'
 import Transition from './Transition'
 import { motion, useScroll, useTransform } from 'framer-motion'
@@ -40,7 +41,8 @@ const Home = () => {
           </h1>
         </div>
       </motion.section>
-      <Transition />
+      {/* <Transition /> */}
+      <Borrador />
     </>
   )
 }
