@@ -8,7 +8,7 @@ const Navbar = () => {
           <div className="grid justify-items-start content-center p-5">
             <Link
               to="/"
-              className="font-typographicPrimary text-secondaryColor text-xl sm:text-3xl"
+              className="font-typographicPrimary text-secondaryColor text-xl sm:text-4xl"
             >
               SANCTUARY
             </Link>
