@@ -45,6 +45,7 @@ const Home = () => {
 
       <Borrador />
       <About />
+      <Borrador/>
     </>
   )
 }
