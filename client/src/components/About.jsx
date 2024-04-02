@@ -58,11 +58,11 @@ const About = () => {
             </Link>
           </div>
 
-          <div className="sm:col-start-1 sm:col-end-4 -m-10 bg-slate-400 ">
+          <div className="sm:col-start-1 sm:col-end-4  bg-slate-400 ">
             <img className="" src="/images/concrete.jpeg" alt="wood" />
           </div>
           <div className="grid items-end sm:col-start-7 sm:col-end-9 h-64 -mr-10 bg-slate-600">
-            hola
+           
           </div>
         </div>
       </div>
